@@ -1,18 +1,16 @@
 import { AppSidebar } from "@/components/appSidebar/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
 import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
 
 export default function Page() {
   return (
@@ -23,29 +21,25 @@ export default function Page() {
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ml-1" />
             <Separator orientation="vertical" className="mr-2 h-4" />
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
-                    Building Your Application
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+            <h1>Dashboard page</h1>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-            <div className="aspect-video rounded-xl bg-muted/50" />
-          </div>
-          <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
-        </div>
+        <Tabs defaultValue="rentabilidad" className="w-full px-4">
+          <TabsList className="grid w-fit grid-cols-4">
+            <TabsTrigger value="rentabilidad">Rentabilidad</TabsTrigger>
+            <TabsTrigger value="actividad">Actividad</TabsTrigger>
+            <TabsTrigger value="liquidez">Liquidez</TabsTrigger>
+            <TabsTrigger value="solvencia">Solvencia</TabsTrigger>
+          </TabsList>
+          <TabsContent value="rentabilidad">
+            <div className="w-full h-screen border border-black">
+              <h1 className="w-full">Dashboard content</h1>
+            </div>
+          </TabsContent>
+          <TabsContent value="actividad"></TabsContent>
+          <TabsContent value="liquidez"></TabsContent>
+          <TabsContent value="solvencia"></TabsContent>
+        </Tabs>
       </SidebarInset>
     </SidebarProvider>
   )
