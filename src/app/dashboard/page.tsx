@@ -12,6 +12,8 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 
+import { Profitability } from "@/components/dashboard/profitability"
+
 export default function Page() {
   return (
     <SidebarProvider>
@@ -24,21 +26,19 @@ export default function Page() {
             <h1>Dashboard page</h1>
           </div>
         </header>
-        <Tabs defaultValue="rentabilidad" className="w-full px-4">
+        <Tabs defaultValue="profitability" className="w-full px-4">
           <TabsList className="grid w-fit grid-cols-4">
-            <TabsTrigger value="rentabilidad">Rentabilidad</TabsTrigger>
-            <TabsTrigger value="actividad">Actividad</TabsTrigger>
-            <TabsTrigger value="liquidez">Liquidez</TabsTrigger>
-            <TabsTrigger value="solvencia">Solvencia</TabsTrigger>
+            <TabsTrigger value="profitability">Rentabilidad</TabsTrigger>
+            <TabsTrigger value="activity">Activity</TabsTrigger>
+            <TabsTrigger value="liquidity">Liquidity</TabsTrigger>
+            <TabsTrigger value="solvency">Solvency</TabsTrigger>
           </TabsList>
-          <TabsContent value="rentabilidad">
-            <div className="w-full h-screen border border-black">
-              <h1 className="w-full">Dashboard content</h1>
-            </div>
+          <TabsContent value="profitability" className="w-full h-[86vh]">
+            <Profitability />
           </TabsContent>
-          <TabsContent value="actividad"></TabsContent>
-          <TabsContent value="liquidez"></TabsContent>
-          <TabsContent value="solvencia"></TabsContent>
+          <TabsContent value="activity"></TabsContent>
+          <TabsContent value="liquidity"></TabsContent>
+          <TabsContent value="solvency"></TabsContent>
         </Tabs>
       </SidebarInset>
     </SidebarProvider>
