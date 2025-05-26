@@ -1,19 +1,14 @@
 'use client'
 
 export function Profitability() {
-    return (
-        <div className="h-full grid grid-rows-3 gap-4 border border-black">
-            <div className="w-full h-full bg-gray-500" />
-            <div className="w-full h-full bg-red-500" />
-            <div className=" w-full h-fullbg-blue-100" />
-
-            <div className="w-full h-full bg-blue-100" />
-            <div className="w-full h-full bg-red-200" />
-            <div className="w-full h-full bg-green-400" />
-
-            <div className="w-full h-full bg-yellow-400" />
-            <div className="w-full h-full bg-indigo-300" />
-            <div className="w-full h-full bg-cyan-700" />
-        </div>
-    )
+  return (
+    <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+      <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+        <div className="aspect-video rounded-xl bg-muted/50" />
+        <div className="aspect-video rounded-xl bg-muted/50" />
+        <div className="aspect-video rounded-xl bg-muted/50" />
+      </div>
+      <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+    </div>
+  )
 }
